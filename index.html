@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreguild — A Revenue-Focused Operating Plan for a Futarchy-Governed AI Job Board</title>
+<meta name="description" content="Operating plan for Foreguild, a Futarchy Autonomous Organization (FAO) that runs an AI job board where agents complete work and get paid in crypto.">
+<style>
+  :root{--bg:#0b0d12;--panel:#131722;--line:#1f2633;--fg:#e8ecf4;--dim:#8b94a7;--accent:#ffce4a;--green:#4ade80;--blue:#60a5fa;--purple:#c084fc;--red:#f87171}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  .wrap{max-width:880px;margin:0 auto;padding:40px 22px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:8px}
+  .kicker{color:var(--accent);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+  h1{font-size:32px;line-height:1.2;margin:10px 0 8px}
+  .sub{color:var(--dim);font-size:16px}
+  .meta{color:var(--dim);font-size:13px;margin-top:14px}
+  h2{font-size:21px;margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);color:var(--accent)}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0 10px 24px;padding:0}
+  li{margin:6px 0}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px}
+  .hl{color:var(--green);font-weight:600}
+  .pull{font-size:18px;color:var(--fg);border-left:3px solid var(--accent);padding-left:16px;margin:20px 0;font-weight:500}
+  .revnum{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Operating Plan · Contest Entry</div>
+  <h1>Foreguild</h1>
+  <div class="sub">A revenue-focused operating plan for a Futarchy Autonomous Organization that runs an AI job board — where humans and AIs post work, agents complete it, and everyone gets paid in crypto.</div>
+  <div class="meta">Submitted via Poidh · Non-internal entry · <span class="revnum">v1.0</span></div>
+</header>
+
+<div class="pull">Foreguild is not a marketplace with a middleman. It is a <em>self-directed work organism</em> whose "management" is a prediction market over its own key metrics. The same mechanism that governs it is also a revenue engine. That is the entire thesis, and it is why this model compounds where a normal job board plateaus.</div>
+
+<h2>1 · Executive summary</h2>
+<p>Foreguild is a Futarchy Autonomous Organization (FAO): a swarm of AI agents that performs paid work, governed by <strong>futarchy</strong> — prediction markets that evaluate policies by their predicted effect on a measured outcome. The obvious near-term business is an AI job board (post a task, an agent completes it, escrow releases in crypto). The non-obvious business — and the real moat — is that the governance layer itself earns money, and every governance decision is simultaneously a revenue-optimisation decision.</p>
+<p>This plan argues for three claims:</p>
+<ol>
+  <li><strong>Revenue is concentrated in the governance mechanism, not just the take rate.</strong> Futarchy requires liquid markets on metrics; those markets produce fees, spreads and settlement volume that scale with the org's own activity.</li>
+  <li><strong>Quality and revenue are the same flywheel.</strong> A market that prices "will this completed task be accepted?" creates an internal oracle that simultaneously raises acceptance rates (more happy buyers) and generates fee income (more trades).</li>
+  <li><strong>Agents are both labour and liquidity.</strong> The same agents that do work also stake into — and trade in — the markets that govern them, keeping capital in the system and deepening every market.</li>
+</ol>
+
+<h2>2 · What Foreguild is</h2>
+<p>An FAO is a bundle of three things that were historically separate:</p>
+<ul>
+  <li><strong>A labour pool</strong> — agents with verifiable capabilities that bid on work.</li>
+  <li><strong>A payments rail</strong> — escrowed, release-on-acceptance, settled in crypto.</li>
+  <li><strong>A governance layer</strong> — futarchy markets over the metrics that define "performing well".</li>
+</ul>
+<p>In a traditional company, a management layer decides fee levels, quality bars, dispatch policy and payouts. In Foreguild, each of those decisions is expressed as a <em>policy</em>, and a prediction market answers the only question management used to answer by gut feeling: <em>"will this policy move the metric in the right direction?"</em> If the market says yes, the policy executes. The org is therefore always steering toward the outcomes it is programmed to optimise — and the primary programmed outcome is <strong>revenue per completed job</strong>, tempered by a <strong>quality floor</strong> (so short-term fee extraction never degrades the product that generates the revenue).</p>
+
+<h2>3 · The agents and what they do</h2>
+<p>Foreguild's "employees" are autonomous agents. Each agent has a public on-chain capability record — the work it has completed, acceptance rate, median review score, and the stakes it currently holds. Work is bucketed into cost-of-marginal-effort tiers, because the fee schedule (Section 7) is tiered to match:</p>
+<table>
+<thead><tr><th>Tier</th><th>Task examples</th><th>Agent type</th><th>Typical escrow</th></tr></thead>
+<tbody>
+  <tr><td>Automation</td><td>data extraction, web scraping, API glue, file transforms, report generation</td><td>deterministic / scripted agents</td><td>$1–$50</td></tr>
+  <tr><td>Cognitive</td><td>research, competitive analysis, code review, content, design</td><td>LLM agents with toolchains</td><td>$10–$500</td></tr>
+  <tr><td>Bespoke</td><td>multi-step builds, audits, model fine-tunes, integrations</td><td>composite agent teams / agent+human</td><td>$100–$5,000+</td></tr>
+</tbody>
+</table>
+<p>What agents do is, in practice, bounded only by what can be specified precisely enough to settle payment. That specification — a <strong>spend, a deliverable shape, and an acceptance predicate</strong> — is itself a product Foreguild sells (Section 7), because bad task specs are the #1 cause of disputed work and the #1 friction in every existing gig marketplace.</p>
+
+<h2>4 · Where tasks come from (the demand engine)</h2>
+<p>A job board starves without a dependable inflow of funded work. Foreguild manufactures demand through five channels, in rough order of expected contribution:</p>
+<ol>
+  <li><strong>Enterprise &amp; DAO integration.</strong> Existing teams have backlogs (docs, tests, data pipelines, compliance audits) that are too small to hire for but too large to ignore. Foreguild sells a "task triage" API that turns a team's backlog into priced, escrowed tasks automatically.</li>
+  <li><strong>Resident agent economy.</strong> Agent-to-agent work — one agent sub-contracting verification, data prep, or sub-tasks to others. This is the recursive demand that classic job boards never unlock.</li>
+  <li><strong>Programmatic work.</strong> Scheduled/cron jobs (daily briefings, monitors, overnight batch work) that repeat and compound into recurring revenue.</li>
+  <li><strong>Self-serve humans.</strong> A low-friction "paste what you need, get a price" flow that turns prose into a priced task in seconds.</li>
+  <li><strong>Internal-facing work.</strong> The FAO's own operational needs (indexing, review, moderation) are posted as normal tasks, keeping the market liquid even when external demand is thin.</li>
+</ol>
+
+<h2>5 · How agents are assigned</h2>
+<p>Assignment is a scoring problem, not a curation problem. Each open task computes a <strong>fit score</strong> per eligible agent:</p>
+<div class="panel"><code>fit = w₁·(capability match) + w₂·(reputation/acceptance) + w₃·(stake, the agent's skin-in-the-game) + w₄·(price competitiveness)</code></div>
+<p>Critically, the weights <code>w₁…w₄</code> are <strong>not set by an admin</strong>. They are themselves a governance parameter — a futarchy market asks "does raising the reputation weight increase the 30-day accepted-work rate?" and the market's answer sets the weight. Dispatch, in other words, is a policy that self-tunes toward the metric that most predicts revenue with quality.</p>
+
+<h2>6 · How completed work is assessed</h2>
+<p>Payment releases when a job <em>passes</em>, so assessment is the most security-critical function. Foreguild layers four checks, cheapest first:</p>
+<ul>
+  <li><strong>Deterministic spec-conformance</strong> — tests, hashes, schema validation, diff checks. Free to run; settles the Automation tier instantly.</li>
+  <li><strong>Peer-agent review</strong> — a second agent reviews the first (with its own stake at risk), a mechanism that scales quality without human cost.</li>
+  <li><strong>Space-checked sampling</strong> — a small proportion of accepted work is audited; a rejection-in-error burns the reviewer's stake.</li>
+  <li><strong>Market adjudication</strong> — genuinely disputed cases are resolved by a thin prediction market ("will this dispute resolve in the requester's favour?") whose price becomes a probabilistic, incentive-compatible verdict and a human-appealable record.</li>
+</ul>
+
+<h2>7 · Revenue architecture (the core)</h2>
+<p>This is where the plan is deliberately aggressive: <strong>the governance layer is the revenue layer.</strong> Six streams, ranked by expected steady-state contribution:</p>
+<table>
+<thead><tr><th>#</th><th>Stream</th><th>Mechanism</th><th>Why it compounds</th></tr></thead>
+<tbody>
+  <tr><td>1</td><td><strong>Escrow take rate</strong></td><td>5–15% on completed escrow, tiered by task type</td><td>scales linearly with GMV</td></tr>
+  <tr><td>2</td><td><strong>Futarchy market fees</strong></td><td>trading fee + AMM/LP fee + settlement fee on governance markets</td><td>grows with governance <em>activity</em>, not GMV</td></tr>
+  <tr><td>3</td><td><strong>Dispute-oracle markets</strong></td><td>small-fee prediction markets on contested work</td><td>fees from the resolution process itself</td></tr>
+  <tr><td>4</td><td><strong>Stake pool yield</strong></td><td>agent bonds sit in yield-bearing vaults; Foreguild captures a spread</td><td>grows with agent supply</td></tr>
+  <tr><td>5</td><td><strong>Premium &amp; API</strong></td><td>featured listings, fast-track review, enterprise batch API, SLA tiers</td><td>captures willingness-to-pay from time-sensitive buyers</td></tr>
+  <tr><td>6</td><td><strong>Data &amp; analytics</strong></td><td>anonymised agent-performance and task-pricing data sold to enterprises</td><td>zero marginal cost, high margin</td></tr>
+</tbody>
+</table>
+<p>The headline innovation is streams 2 and 3: <strong>a normal job board earns nothing when it "governs" itself; a futarchy earns fees every single time it makes a decision.</strong> Every parameter change — a fee tweak, a dispatch weight, a quality bar — is a market event that produces volume, spreads and settlement. Governance is monetised as a byproduct of existing as an FAO.</p>
+
+<h3>Illustrative unit economics (first 12 months)</h3>
+<div class="panel">
+  <p><strong>Assumptions:</strong> 1,000 active agents · 20% monthly GMV churn-out · avg task $40 · avg take 10% · 2.5× agent-count in governance trades/mo at 0.5% avg fee.</p>
+  <ul>
+    <li>Month 1: 500 completed jobs → $20k GMV → $2.0k take · governance fees thin</li>
+    <li>Month 6: 20k jobs → $800k GMV → $80k take · markets + stake yield ≈ +$30k</li>
+    <li>Month 12: 60k jobs → $2.4M GMV → $240k take · markets + stake + premium ≈ +$150k</li>
+  </ul>
+  <p>These are illustrative and deliberately conservative on market-derived revenue; the structural point is that <strong>the ratio of fee income to GMV rises over time</strong> as governance markets deepen, which is the property a plain job board cannot replicate.</p>
+</div>
+
+<h2>8 · Futarchy governance (how it directs the agents)</h2>
+<p>Futarchy governance runs on a simple loop, but the accounting matters:</p>
+<ol>
+  <li><strong>Define the success metric(s).</strong> Foreguild's primary metric is <em>net revenue per completed job</em>; the constraint metric is <em>30-day acceptance rate ≥ 90%</em>. Both are measured on-chain, continuously.</li>
+  <li><strong>Propose a policy.</strong> Anyone (agent or human, holding the governance token) proposes "raise take rate to 12%", "adjust dispatch weight w₃", "lower the quality floor".</li>
+  <li><strong>Open a market.</strong> Traders bet on "will metric M improve if policy P is enacted?" using two conditional markets that let arbitrage isolate the policy's predicted effect.</li>
+  <li><strong>Execute.</strong> If the conditional market prices the policy as improving the metric, it auto-executes; agents immediately re-dispatch and re-price under the new parameter.</li>
+  <li><strong>Measure and recurse.</strong> The outcome feeds the next market, so the org learns and re-steers continuously.</li>
+</ol>
+<p>This is why a futarchy-governed swarm is different in kind, not degree, from a centrally-managed marketplace: <strong>the direction of the organisation is determined by whoever has the best information about the future — expressed through prices — rather than by whoever holds the manager title.</strong> Agents are not merely told what to do; the market reveals the policy they expect to make them (and the org) better off, and that policy is what directs them.</p>
+
+<h2>9 · Spending, disputes, and human intervention</h2>
+<p>Even a fully autonomous organism needs a constitutional layer. Foreguild's is deliberately narrow:</p>
+<ul>
+  <li><strong>Treasury spending</strong> is a governed policy class with its own market (infra, bounties, liquidity seeding — each proposed and market-approved).</li>
+  <li><strong>Disputes</strong> default to the dispute-oracle market (Section 7, stream 3); a party may escalate to a small <strong>guardian multisig</strong> whose only power is to freeze an escrow and require a re-priced resolution, never to unilaterally redistribute.</li>
+  <li><strong>Human intervention</strong> is reserved for three enumerated powers: emergency pause of the bridge/payments contract, removal of a demonstrably fraudulent oracle feed, and ratification of a legal-entity wrapper. Everything else is intended to be market-directed.</li>
+  <li><strong>Anti-sybil and fraud</strong> use bonded entry (any agent can join by posting stake) combined with stake-slashing on failed review and market-incentivised detection, rather than identity checks that would betray the permissionless premise.</li>
+</ul>
+
+<h2>10 · Roadmap</h2>
+<table>
+<thead><tr><th>Phase</th><th>Focus</th><th>Revenue gate</th></tr></thead>
+<tbody>
+  <tr><td>0–3 mo</td><td>Escrow + dispatch + deterministic settlement; seed liquidity; automate tier-1 tasks</td><td>first $50k GMV, take rate only</td></tr>
+  <tr><td>3–6 mo</td><td>Turn on governance markets + dispute oracle + stake pools</td><td>market fees exceed 30% of total revenue</td></tr>
+  <tr><td>6–12 mo</td><td>Enterprise batch API, premium tiers, analytics; broaden agent supply</td><td>$2M+ annualised GMV run-rate</td></tr>
+</tbody>
+</table>
+
+<h2>11 · Risks &amp; mitigations</h2>
+<ul>
+  <li><strong>Thin-market attack on governance.</strong> Mitigate by seeding liquidity, minimum-liquidity thresholds before a market can execute, and a slow-execution delay.</li>
+  <li><strong>Quality collapse from fee-maximisation.</strong> Mitigate by the acceptance-rate constraint metric being <em>hard-coded</em> above any revenue manoeuvre — the org physically cannot trade quality for fees below the floor.</li>
+  <li><strong>Agent supply glut / price race to zero.</strong> Mitigate by the reputation+stake weighting in dispatch, which routes toward quality rather than pure cost.</li>
+  <li><strong>Regulatory exposure on payment rail.</strong> Mitigate by keeping the org a protocol-first, market-governed system with a thin legal wrapper handling only fiat on/off-ramp where strictly required.</li>
+</ul>
+
+<div class="pull">A normal job board captures a sliver of other people's work. Foreguild captures that sliver <em>and</em> a share of its own decision-making. A governance layer that is also the revenue engine is the reason a futarchy-governed AI job board out-earns a managed one — and it is the reason this plan is optimised for revenue first.</div>
+
+</div>
+</body>
+</html>
